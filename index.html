@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Илија Лазаров | Центар за Летови</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            width: 100%;
+            min-height: 100%;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Позадинска слика со плажа */
+            background-image: url('502518473_18513385912032876_7955556274105511927_n.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* Заштитен слој за читливост */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.85) 100%);
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .profile-wrapper {
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: #38bdf8;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 35px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card span {
+            color: #38bdf8;
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .card.faro:hover span { color: #F1C40F; }
+        .card.amsterdam:hover span { color: #00A1DE; }
+        .card.copenhagen:hover span { color: #4facfe; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="profile-wrapper">
+            <!-- Твојата профилна слика -->
+            <img src="480586672_122111054276728828_3272084177182650204_n.jpg" alt="Илија Лазаров" class="profile-img">
+        </div>
+
+        <h1>Добредојдовте!</h1>
+        <p>Јас сум Илија Лазаров. Ова е мојот личен центар каде ги планирам и следам моите претстојни авионски авантури низ Европа. Одберете дестинација за да го видите одбројувањето!</p>
+
+        <div class="grid">
+            <a href="https://ilijalazaroviki.github.io/LetFaroPortugal/" class="card faro">
+                <div class="icon">☀️</div>
+                <h3>Фаро</h3>
+                <span>Види го летот</span>
+            </a>
+            
+            <a href="https://ilijalazaroviki.github.io/Let_amsterdam/" class="card amsterdam">
+                <div class="icon">🌷</div>
+                <h3>Амстердам</h3>
+                <span>Види го летот</span>
+            </a>
+            
+            <a href="https://ilijalazaroviki.github.io/FlighttoCopenhagen/" class="card copenhagen">
+                <div class="icon">🇩🇰</div>
+                <h3>Копенхаген</h3>
+                <span>Види го летот</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
