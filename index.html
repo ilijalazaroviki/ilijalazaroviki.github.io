@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Илија Лазаров | Центар за Летови</title>
     
-    <!-- Вклучување на FontAwesome за иконите од социјалните мрежи -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -20,19 +19,18 @@
             min-height: 100%;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: #ffffff;
-            /* Твојата слика од плажа како позадина со новото име */
-            background-image: url('502518473_18513385912032876_7955556274105511927_n_2.jpg');
+            /* Поправени имиња на слики */
+            background-image: url('502518473_18513385912032876_7955556274105511927_n.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             background-repeat: no-repeat;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Изменето за да дозволи скролање ако има многу содржина */
+            align-items: flex-start;
             padding: 40px 0;
         }
 
-        /* Темен полу-проѕирен слој преку сликата за да се чита текстот совршено */
         body::before {
             content: "";
             position: fixed;
@@ -210,7 +208,6 @@
             color: #ffffff;
         }
 
-        /* Индивидуални бои за социјалните мрежи при посочување */
         .social-item.fb:hover .social-icon { background: #1877F2; border-color: #1877F2; color: #fff;}
         .social-item.fb-page:hover .social-icon { background: #0c56b6; border-color: #0c56b6; color: #fff;}
         .social-item.ig:hover .social-icon { background: #E1306C; border-color: #E1306C; color: #fff;}
@@ -220,7 +217,6 @@
         .social-item.vk:hover .social-icon { background: #0077FF; border-color: #0077FF; color: #fff;}
         .social-item.tg:hover .social-icon { background: #0088cc; border-color: #0088cc; color: #fff;}
 
-        /* Прилагодување за мобилен телефон */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
             .profile-img { width: 150px; height: 150px; }
@@ -236,15 +232,14 @@
 
     <div class="container">
         
-        <!-- Твојата профилна слика со новото име -->
         <div class="profile-wrapper">
-            <img src="480586672_122111054276728828_3272084177182650204_n_2.jpg" alt="Илија Лазаров" class="profile-img">
+            <!-- Поправено име на профилната слика -->
+            <img src="480586672_122111054276728828_3272084177182650204_n.jpg" alt="Илија Лазаров" class="profile-img">
         </div>
 
         <h1>Добредојдовте!</h1>
         <p class="intro-text">Илија Лазаров – Центар за летови. Изберете дестинација за да го видите одбројувањето до мојата следна авионска авантура.</p>
 
-        <!-- Картички за летови -->
         <div class="grid">
             <a href="https://ilijalazaroviki.github.io/LetFaroPortugal/" class="card faro">
                 <div class="icon">☀️</div>
