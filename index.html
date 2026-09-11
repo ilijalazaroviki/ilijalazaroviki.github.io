@@ -141,7 +141,6 @@
         }
         
         .card.amsterdam:hover span { background: #00A1DE; color: #fff; border-color: #00A1DE; }
-        .card.copenhagen:hover span { background: #4facfe; color: #fff; border-color: #4facfe; }
         .card.marocco:hover span { background: #00E676; color: #fff; border-color: #00E676; }
 
         /* СТИЛОВИ ЗА АРХИВАТА */
@@ -161,7 +160,9 @@
 
         .archive-grid {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            gap: 15px;
         }
 
         .archive-card {
@@ -302,12 +303,6 @@
                 <h3>Амстердам</h3>
                 <span>Види го летот</span>
             </a>
-            
-            <a href="https://ilijalazaroviki.github.io/FlighttoCopenhagen/" class="card copenhagen">
-                <div class="icon">🇩🇰</div>
-                <h3>Копенхаген</h3>
-                <span>Види го летот</span>
-            </a>
 
             <a href="https://ilijalazaroviki.github.io/marocco/" class="card marocco">
                 <div class="icon">🇲🇦</div>
@@ -316,13 +311,18 @@
             </a>
         </div>
 
-        <!-- Архива за завршени летови (Овде е сместен Фаро) -->
+        <!-- Архива за завршени летови (Овде се сместени Фаро и Копенхаген) -->
         <div class="archive-section">
             <div class="archive-title">Архива на завршени летови</div>
             <div class="archive-grid">
                 <a href="https://ilijalazaroviki.github.io/LetFaroPortugal/" class="archive-card">
                     <span class="archive-icon">☀️</span>
                     <span>Фаро (Португалија)</span>
+                    <span class="badge">Завршен</span>
+                </a>
+                <a href="https://ilijalazaroviki.github.io/FlighttoCopenhagen/" class="archive-card">
+                    <span class="archive-icon">🇩🇰</span>
+                    <span>Копенхаген</span>
                     <span class="badge">Завршен</span>
                 </a>
             </div>
