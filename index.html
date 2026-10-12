@@ -17,10 +17,11 @@
 
         body, html {
             width: 100%;
-            min-height: 100%;
+            min-height: 100vh;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: #ffffff;
-            background-image: url('502518473_18513385912032876_7955556274105511927_n.jpg');
+            background-color: #0f172a;
+            background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%), url('502518473_18513385912032876_7955556274105511927_n.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -31,20 +32,9 @@
             padding: 40px 0;
         }
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.75) 100%);
-            z-index: 0;
-        }
-
         .container {
             position: relative;
-            z-index: 1;
+            z-index: 10;
             width: 90%;
             max-width: 900px;
             text-align: center;
@@ -103,6 +93,7 @@
             color: #ffffff;
             transition: all 0.3s ease;
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -165,4 +156,229 @@
         }
 
         .archive-card {
-            background: rgba(25
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #94a3b8;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .archive-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .archive-card .archive-icon {
+            font-size: 1.2rem;
+        }
+
+        .archive-card .badge {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+            font-size: 0.7rem;
+            padding: 3px 8px;
+            border-radius: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* СОЦИЈАЛНИ МРЕЖИ */
+        .social-section {
+            padding-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .social-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #cbd5e1;
+        }
+
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #e2e8f0;
+            width: 85px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-label {
+            font-size: 0.75rem;
+            text-align: center;
+            line-height: 1.3;
+            opacity: 0.8;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .social-item:hover .social-label {
+            opacity: 1;
+            color: #ffffff;
+        }
+
+        .social-item.fb:hover .social-icon { background: #1877F2; border-color: #1877F2; color: #fff;}
+        .social-item.fb-page:hover .social-icon { background: #0c56b6; border-color: #0c56b6; color: #fff;}
+        .social-item.ig:hover .social-icon { background: #E1306C; border-color: #E1306C; color: #fff;}
+        .social-item.x:hover .social-icon { background: #1da1f2; border-color: #1da1f2; color: #fff;}
+        .social-item.yt:hover .social-icon { background: #FF0000; border-color: #FF0000; color: #fff;}
+        .social-item.gab:hover .social-icon { background: #21d375; border-color: #21d375; color: #fff;}
+        .social-item.vk:hover .social-icon { background: #0077FF; border-color: #0077FF; color: #fff;}
+        .social-item.tg:hover .social-icon { background: #0088cc; border-color: #0088cc; color: #fff;}
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            .profile-img { width: 150px; height: 150px; }
+            .grid { gap: 15px; }
+            .card { padding: 30px 15px; }
+            .social-grid { gap: 10px; justify-content: center; }
+            .social-item { width: 75px; }
+            .social-icon { width: 45px; height: 45px; font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="profile-wrapper">
+            <img src="480586672_122111054276728828_3272084177182650204_n.jpg" alt="Илија Лазаров" class="profile-img">
+        </div>
+
+        <h1>Добредојдовте!</h1>
+        <p class="intro-text">Илија Лазаров – Центар за летови. Изберете дестинација за да го видите одбројувањето до мојата следна авионска авантура.</p>
+
+        <!-- Активни летови -->
+        <div class="grid">
+            <a href="https://ilijalazaroviki.github.io/marocco/" class="card marocco">
+                <div class="icon">🇲🇦</div>
+                <h3>Маракеш</h3>
+                <span>Види го летот</span>
+            </a>
+        </div>
+
+        <!-- Архива за завршени летови -->
+        <div class="archive-section">
+            <div class="archive-title">Архива на завршени летови</div>
+            <div class="archive-grid">
+                <a href="https://ilijalazaroviki.github.io/Let_amsterdam/" class="archive-card">
+                    <span class="archive-icon">🌷</span>
+                    <span>Амстердам</span>
+                    <span class="badge">Завршен</span>
+                </a>
+                <a href="https://ilijalazaroviki.github.io/LetFaroPortugal/" class="archive-card">
+                    <span class="archive-icon">☀️</span>
+                    <span>Фаро (Португалија)</span>
+                    <span class="badge">Завршен</span>
+                </a>
+                <a href="https://ilijalazaroviki.github.io/FlighttoCopenhagen/" class="archive-card">
+                    <span class="archive-icon">🇩🇰</span>
+                    <span>Копенхаген</span>
+                    <span class="badge">Завршен</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Социјални мрежи -->
+        <div class="social-section">
+            <h3>Поврзи се со мене:</h3>
+            
+            <div class="social-grid">
+                
+                <a href="https://www.facebook.com/ilija.lazarov.841328/" target="_blank" class="social-item fb">
+                    <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <span class="social-label">FB Профил</span>
+                </a>
+
+                <a href="https://www.facebook.com/ilijalazarov.makedonija/" target="_blank" class="social-item fb-page">
+                    <div class="social-icon"><i class="fa-solid fa-flag"></i></div>
+                    <span class="social-label">FB Страна</span>
+                </a>
+
+                <a href="https://www.instagram.com/ilijalazarov/" target="_blank" class="social-item ig">
+                    <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <span class="social-label">Instagram</span>
+                </a>
+
+                <a href="https://x.com/ilijalazarov" target="_blank" class="social-item x">
+                    <div class="social-icon"><i class="fa-brands fa-twitter"></i></div>
+                    <span class="social-label">X</span>
+                </a>
+
+                <a href="https://www.youtube.com/@ilijalazarov2787" target="_blank" class="social-item yt">
+                    <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <span class="social-label">YouTube</span>
+                </a>
+
+                <a href="https://gab.com/ilijalazarov" target="_blank" class="social-item gab">
+                    <div class="social-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                    <span class="social-label">Gab</span>
+                </a>
+
+                <a href="https://vk.com/ilija.lazarov" target="_blank" class="social-item vk">
+                    <div class="social-icon"><i class="fa-brands fa-vk"></i></div>
+                    <span class="social-label">VKontakte</span>
+                </a>
+
+                <a href="https://t.me/ilijalazarov" target="_blank" class="social-item tg">
+                    <div class="social-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <span class="social-label">TG Порака</span>
+                </a>
+
+                <a href="https://t.me/ilijalazarovmacedonia" target="_blank" class="social-item tg">
+                    <div class="social-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <span class="social-label">TG Канал</span>
+                </a>
+
+                <a href="https://t.me/lazarovilija" target="_blank" class="social-item tg">
+                    <div class="social-icon"><i class="fa-solid fa-users"></i></div>
+                    <span class="social-label">TG Група</span>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
