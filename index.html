@@ -21,15 +21,25 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             color: #ffffff;
             background-color: #0f172a;
-            background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%), url('502518473_18513385912032876_7955556274105511927_n.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: flex-start;
             padding: 40px 0;
+            overflow-x: hidden;
+        }
+
+        /* Сигурна фиксна позадина преку посебен слој */
+        .bg-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%), url('502518473_18513385912032876_7955556274105511927_n.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
         }
 
         .container {
@@ -130,8 +140,6 @@
             transition: background 0.3s, color 0.3s;
             border: 1px solid rgba(255,255,255,0.2);
         }
-        
-        .card.marocco:hover span { background: #00E676; color: #fff; border-color: #00E676; }
 
         /* СТИЛОВИ ЗА АРХИВАТА */
         .archive-section {
@@ -279,6 +287,9 @@
 </head>
 <body>
 
+    <!-- Позадински слој за сигурен приказ -->
+    <div class="bg-overlay"></div>
+
     <div class="container">
         
         <div class="profile-wrapper">
@@ -288,19 +299,15 @@
         <h1>Добредојдовте!</h1>
         <p class="intro-text">Илија Лазаров – Центар за летови. Изберете дестинација за да го видите одбројувањето до мојата следна авионска авантура.</p>
 
-        <!-- Активни летови -->
-        <div class="grid">
-            <a href="https://ilijalazaroviki.github.io/marocco/" class="card marocco">
-                <div class="icon">🇲🇦</div>
-                <h3>Маракеш</h3>
-                <span>Види го летот</span>
-            </a>
-        </div>
-
-        <!-- Архива за завршени летови -->
-        <div class="archive-section">
+        <!-- Архива за завршени летови (сите летови се сега овде) -->
+        <div class="archive-section" style="border-top: none; padding-top: 0;">
             <div class="archive-title">Архива на завршени летови</div>
             <div class="archive-grid">
+                <a href="https://ilijalazaroviki.github.io/marocco/" class="archive-card">
+                    <span class="archive-icon">🇲🇦</span>
+                    <span>Маракеш</span>
+                    <span class="badge">Завршен</span>
+                </a>
                 <a href="https://ilijalazaroviki.github.io/Let_amsterdam/" class="archive-card">
                     <span class="archive-icon">🌷</span>
                     <span>Амстердам</span>
