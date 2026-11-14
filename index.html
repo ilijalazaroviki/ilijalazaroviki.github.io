@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Одбројување до летот: Даблин ✈ Берлин | Aer Lingus</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☘️</text></svg>">
+    <title>Илија Лазаров | Центар за Летови</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✈️</text></svg>">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             box-sizing: border-box;
@@ -14,19 +17,20 @@
 
         body, html {
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            /* Слика од патнички авион на утринско небо */
-            background-image: url('https://images.unsplash.com/photo-1559268950-2d7ceb2efa3a?auto=format&fit=crop&w=1920&q=80');
+            color: #ffffff;
+            background-image: url('502518473_18513385912032876_7955556274105511927_n.jpg');
             background-size: cover;
             background-position: center;
-            background-repeat: no-repeat;
             background-attachment: fixed;
-            color: #ffffff;
-            overflow-x: hidden;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 40px 0;
         }
 
-        /* Темно-зелен Aer Lingus заштитен слој за одлична читливост */
         body::before {
             content: "";
             position: fixed;
@@ -34,239 +38,355 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(0, 61, 32, 0.82) 0%, rgba(0, 98, 51, 0.72) 100%);
-            z-index: 1;
-        }
-
-        /* Навигациско мени */
-        .navbar {
-            width: 100%;
-            background: rgba(0, 48, 25, 0.88);
-            backdrop-filter: blur(10px);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 10;
-        }
-
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-        }
-
-        .navbar-menu {
-            display: flex;
-            gap: 20px;
-            list-style: none;
-        }
-
-        .navbar-menu a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            opacity: 0.75;
-            transition: opacity 0.3s;
-        }
-
-        .navbar-menu a:hover {
-            opacity: 1;
-        }
-
-        .main-content {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding-top: 80px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.75) 100%);
+            z-index: 0;
         }
 
         .container {
-            padding: 20px;
-            width: 100%;
+            position: relative;
+            z-index: 1;
+            width: 90%;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .profile-wrapper {
+            margin-bottom: 20px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: rgba(255, 255, 255, 0.4);
         }
 
         h1 {
             font-size: 2.8rem;
             margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-        }
-
-        h2 {
-            font-size: 1.6rem;
-            color: #ffffff; 
-            margin-bottom: 40px;
-            font-weight: 400;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        .airport-code {
-            font-weight: 700;
-            color: #2EE59D; /* Свежа Aer Lingus акцентна зелена/тиркизна нијанса */
-        }
-
-        .countdown-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .time-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px 35px;
-            border-radius: 15px;
-            min-width: 150px;
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(46, 229, 157, 0.25);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
-        }
-
-        .number {
-            font-size: 5rem;
-            font-weight: 700;
-            line-height: 1;
-            display: block;
-            margin-bottom: 5px;
-            font-variant-numeric: tabular-nums;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        }
-
-        .label {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #e2e8f0;
-        }
-
-        /* Детали за летот најдолу */
-        .flight-details {
-            margin-top: 45px;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.92);
             letter-spacing: 1px;
-            background: rgba(0, 48, 25, 0.75);
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 30px;
-            border: 1px solid rgba(46, 229, 157, 0.25);
-            backdrop-filter: blur(5px);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .highlight {
-            color: #2EE59D;
-            font-weight: 600;
+        p.intro-text {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 340px));
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            text-decoration: none;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(46, 229, 157, 0.5);
+            box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .card span {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, color 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .card.berlin:hover span { background: #2EE59D; color: #003d20; border-color: #2EE59D; }
+
+        /* СТИЛОВИ ЗА АРХИВАТА */
+        .archive-section {
+            margin-bottom: 40px;
+            padding-top: 25px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.15);
+        }
+
+        .archive-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        .archive-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .archive-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 10px 16px;
+            text-decoration: none;
+            color: #94a3b8;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.82rem;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .archive-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .archive-card .archive-icon {
+            font-size: 1.1rem;
+        }
+
+        .archive-card .badge {
+            background: rgba(255, 255, 255, 0.1);
+            color: #cbd5e1;
+            font-size: 0.65rem;
+            padding: 2px 7px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* СОЦИЈАЛНИ МРЕЖИ */
+        .social-section {
+            padding-top: 35px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .social-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #cbd5e1;
+        }
+
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #e2e8f0;
+            width: 85px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .social-label {
+            font-size: 0.75rem;
+            text-align: center;
+            line-height: 1.3;
+            opacity: 0.8;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .social-item:hover .social-label {
+            opacity: 1;
+            color: #ffffff;
+        }
+
+        .social-item.fb:hover .social-icon { background: #1877F2; border-color: #1877F2; color: #fff;}
+        .social-item.fb-page:hover .social-icon { background: #0c56b6; border-color: #0c56b6; color: #fff;}
+        .social-item.ig:hover .social-icon { background: #E1306C; border-color: #E1306C; color: #fff;}
+        .social-item.x:hover .social-icon { background: #1da1f2; border-color: #1da1f2; color: #fff;}
+        .social-item.yt:hover .social-icon { background: #FF0000; border-color: #FF0000; color: #fff;}
+        .social-item.gab:hover .social-icon { background: #21d375; border-color: #21d375; color: #fff;}
+        .social-item.vk:hover .social-icon { background: #0077FF; border-color: #0077FF; color: #fff;}
+        .social-item.tg:hover .social-icon { background: #0088cc; border-color: #0088cc; color: #fff;}
 
         @media (max-width: 768px) {
-            h1 { font-size: 1.9rem; }
-            h2 { font-size: 1.2rem; margin-bottom: 25px; }
-            .time-box { padding: 15px 20px; min-width: 100px; }
-            .number { font-size: 3rem; }
-            .label { font-size: 0.8rem; }
-            .flight-details { font-size: 0.9rem; padding: 10px 20px; }
-            .navbar { padding: 15px; }
-            .navbar-menu { gap: 12px; }
+            h1 { font-size: 2.2rem; }
+            .profile-img { width: 150px; height: 150px; }
+            .grid { grid-template-columns: 1fr; gap: 15px; }
+            .card { padding: 30px 15px; }
+            .social-grid { gap: 10px; justify-content: center; }
+            .social-item { width: 75px; }
+            .social-icon { width: 45px; height: 45px; font-size: 1.3rem; }
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="navbar-brand">☘️ Мои Летови</div>
-        <ul class="navbar-menu">
-            <li><a href="https://ilijalazaroviki.github.io/">Почетна</a></li>
-            <li><a href="#" style="opacity: 1; font-weight: 700; border-bottom: 2px solid #2EE59D;">Берлин</a></li>
-            <li><a href="https://ilijalazaroviki.github.io/Let_amsterdam/">Амстердам</a></li>
-            <li><a href="https://ilijalazaroviki.github.io/FlighttoCopenhagen/">Копенхаген</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        
+        <div class="profile-wrapper">
+            <img src="480586672_122111054276728828_3272084177182650204_n.jpg" alt="Илија Лазаров" class="profile-img">
+        </div>
 
-    <div class="main-content">
-        <div class="container">
-            <h1>Подгответе се за полетување!</h1>
-            <h2>
-                <span>☘️ Даблин <span class="airport-code">(DUB)</span></span>
-                <span>✈</span>
-                <span>🇩🇪 Берлин <span class="airport-code">(BER)</span></span>
-            </h2>
-            
-            <div class="countdown-wrapper">
-                <div class="time-box">
-                    <span class="number" id="days">00</span>
-                    <span class="label">Денови</span>
-                </div>
-                <div class="time-box">
-                    <span class="number" id="hours">00</span>
-                    <span class="label">Часови</span>
-                </div>
-                <div class="time-box">
-                    <span class="number" id="minutes">00</span>
-                    <span class="label">Минути</span>
-                </div>
-                <div class="time-box">
-                    <span class="number" id="seconds">00</span>
-                    <span class="label">Секунди</span>
-                </div>
-            </div>
+        <h1>Добредојдовте!</h1>
+        <p class="intro-text">Илија Лазаров – Центар за летови. Изберете дестинација за да го видите одбројувањето до мојата следна авионска авантура.</p>
 
-            <div class="flight-details">
-                Време на лет: <span class="highlight">24 Април 2027 во 06:45</span> • Летот е опериран од <span class="highlight">Aer Lingus</span>
+        <!-- Активни летови -->
+        <div class="grid">
+            <a href="https://ilijalazaroviki.github.io/Letberlin2027/" class="card berlin">
+                <div class="icon">🇩🇪</div>
+                <h3>Берлин</h3>
+                <span>Види го летот</span>
+            </a>
+        </div>
+
+        <!-- Архива за завршени летови -->
+        <div class="archive-section">
+            <div class="archive-title">Архива на завршени летови</div>
+            <div class="archive-grid">
+                <a href="https://ilijalazaroviki.github.io/LetFaroPortugal/" class="archive-card">
+                    <span class="archive-icon">☀️</span>
+                    <span>Фаро</span>
+                    <span class="badge">Завршен</span>
+                </a>
+                <a href="https://ilijalazaroviki.github.io/Let_amsterdam/" class="archive-card">
+                    <span class="archive-icon">🌷</span>
+                    <span>Амстердам</span>
+                    <span class="badge">Завршен</span>
+                </a>
+                <a href="https://ilijalazaroviki.github.io/FlighttoCopenhagen/" class="archive-card">
+                    <span class="archive-icon">🇩🇰</span>
+                    <span>Копенхаген</span>
+                    <span class="badge">Завршен</span>
+                </a>
             </div>
         </div>
+
+        <!-- Социјални мрежи -->
+        <div class="social-section">
+            <h3>Поврзи се со мене:</h3>
+            
+            <div class="social-grid">
+                
+                <a href="https://www.facebook.com/ilija.lazarov.841328/" target="_blank" class="social-item fb">
+                    <div class="social-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <span class="social-label">FB Профил</span>
+                </a>
+
+                <a href="https://www.facebook.com/ilijalazarov.makedonija/" target="_blank" class="social-item fb-page">
+                    <div class="social-icon"><i class="fa-solid fa-flag"></i></div>
+                    <span class="social-label">FB Страна</span>
+                </a>
+
+                <a href="https://www.instagram.com/ilijalazarov/" target="_blank" class="social-item ig">
+                    <div class="social-icon"><i class="fa-brands fa-instagram"></i></div>
+                    <span class="social-label">Instagram</span>
+                </a>
+
+                <a href="https://x.com/ilijalazarov" target="_blank" class="social-item x">
+                    <div class="social-icon"><i class="fa-brands fa-twitter"></i></div>
+                    <span class="social-label">X</span>
+                </a>
+
+                <a href="https://www.youtube.com/@ilijalazarov2787" target="_blank" class="social-item yt">
+                    <div class="social-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <span class="social-label">YouTube</span>
+                </a>
+
+                <a href="https://gab.com/ilijalazarov" target="_blank" class="social-item gab">
+                    <div class="social-icon"><i class="fa-solid fa-comment-dots"></i></div>
+                    <span class="social-label">Gab</span>
+                </a>
+
+                <a href="https://vk.com/ilija.lazarov" target="_blank" class="social-item vk">
+                    <div class="social-icon"><i class="fa-brands fa-vk"></i></div>
+                    <span class="social-label">VKontakte</span>
+                </a>
+
+                <a href="https://t.me/ilijalazarov" target="_blank" class="social-item tg">
+                    <div class="social-icon"><i class="fa-brands fa-telegram"></i></div>
+                    <span class="social-label">TG Порака</span>
+                </a>
+
+                <a href="https://t.me/ilijalazarovmacedonia" target="_blank" class="social-item tg">
+                    <div class="social-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <span class="social-label">TG Канал</span>
+                </a>
+
+                <a href="https://t.me/lazarovilija" target="_blank" class="social-item tg">
+                    <div class="social-icon"><i class="fa-solid fa-users"></i></div>
+                    <span class="social-label">TG Група</span>
+                </a>
+
+            </div>
+        </div>
+
     </div>
 
-    <script>
-        // Точниот датум и време за полетување (24 Април 2027 во 06:45:00)
-        const flightDate = new Date("Apr 24, 2027 06:45:00").getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = flightDate - now;
-
-            if (distance < 0) {
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
-                clearInterval(timer);
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            const formatTime = (num) => num < 10 ? "0" + num : num;
-
-            document.getElementById("days").innerText = formatTime(days);
-            document.getElementById("hours").innerText = formatTime(hours);
-            document.getElementById("minutes").innerText = formatTime(minutes);
-            document.getElementById("seconds").innerText = formatTime(seconds);
-        }
-
-        updateCountdown();
-        const timer = setInterval(updateCountdown, 1000);
-    </script>
 </body>
 </html>
