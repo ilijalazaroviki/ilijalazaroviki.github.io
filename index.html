@@ -113,7 +113,6 @@
         .card:hover {
             transform: translateY(-10px);
             background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(46, 229, 157, 0.5);
             box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.4);
         }
 
@@ -141,7 +140,11 @@
             border: 1px solid rgba(255,255,255,0.2);
         }
         
+        .card.berlin:hover { border-color: rgba(46, 229, 157, 0.5); }
         .card.berlin:hover span { background: #2EE59D; color: #003d20; border-color: #2EE59D; }
+
+        .card.milano:hover { border-color: rgba(56, 189, 248, 0.5); }
+        .card.milano:hover span { background: #38bdf8; color: #0f172a; border-color: #38bdf8; }
 
         /* СТИЛОВИ ЗА АРХИВАТА */
         .archive-section {
@@ -298,6 +301,11 @@
 
         <!-- Активни летови -->
         <div class="grid">
+            <a href="https://ilijalazaroviki.github.io/LetMilano2027/" class="card milano">
+                <div class="icon">🇮🇹</div>
+                <h3>Милано</h3>
+                <span>Види го летот</span>
+            </a>
             <a href="https://ilijalazaroviki.github.io/Letberlin2027/" class="card berlin">
                 <div class="icon">🇩🇪</div>
                 <h3>Берлин</h3>
@@ -395,3 +403,4 @@
 
 </body>
 </html>
+
